@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="easyui-layout" fit="true">
+    <div region="north" border="false" heigh="auto" style="padding:10px;">
+        <a id="btnCategory" href="#" class="easyui-linkbutton">Категории</a>
+        <a id="btnProduct" href="#" class="easyui-linkbutton">Товары</a>
+        <a id="btnBoth" href="#" class="easyui-linkbutton">Категории и товары</a>
+    </div>
+    <div region="center" border="false">
+        <div class="easyui-layout" fit="true">
+            <div region="north" border="false" style="height:50%">
+                <div class="easyui-layout" fit="true">
+                    <div id="panelCategoryDialog" region="west" title="DataGrid категорий Dialog" style="width:50%">
+                    </div>
+                    <div id="panelCategoryInline" region="center" title="DataGrid категорий Inline">
+                    </div>
+                </div>
+            </div>
+            <div region="center" border="false">
+                <div class="easyui-layout" fit="true">
+                    <div id="panelProductDialog" region="west" title="DataGrid товаров Dialog" style="width:50%">
+                    </div>
+                    <div id="panelProductInline" region="center" title="DataGrid товаров Inline">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts {
+    @Scripts.Render("~/bundles/lib")
+    @Scripts.Render("~/bundles/category")
+    @Scripts.Render("~/bundles/product")
+    @Scripts.Render("~/bundles/home")
+}

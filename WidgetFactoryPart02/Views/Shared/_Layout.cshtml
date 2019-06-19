@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/main.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/easyui/themes/bootstrap/easyui.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/easyui/themes/icon.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/easyui/themes/color.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="~/Scripts/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery-ui/jquery-ui.js"></script>
+    <script type="text/javascript" src="~/Scripts/easyui/jquery.easyui.min.js"></script>
+    <link href="~/favicon.png" rel="shortcut icon" type="image/png" />
+</head>
+<body>
+    <div class="easyui-layout" fit="true">
+        @RenderBody()
+    </div>    
+
+    @RenderSection("scripts", required: false)
+
+
+</body>
+</html>
