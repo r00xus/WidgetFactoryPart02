@@ -25,10 +25,10 @@
 
             var that = this;
 
-            var footer = $('#footer', that.element);
+            var footer = $('.footer', that.element);
             var footerBtns = {};
 
-            footerBtns.btnOk = $('#btnOk', footer);
+            footerBtns.btnOk = $('.btnOk', footer);
             footerBtns.btnOk.linkbutton({
                 text: 'OK',
                 width: 90,
@@ -37,7 +37,7 @@
                 }
             });
 
-            footerBtns.btnCancel = $('#btnCancel', footer);
+            footerBtns.btnCancel = $('.btnCancel', footer);
             footerBtns.btnCancel.linkbutton({
                 text: 'Отмена',
                 width: 90,

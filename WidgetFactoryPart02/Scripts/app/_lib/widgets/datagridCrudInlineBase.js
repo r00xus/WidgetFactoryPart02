@@ -40,7 +40,7 @@
             this._super();
 
             // Кнопка "Подтвердить"
-            this.btnOk = $('#btnOk', this.element);
+            this.btnOk = $('.btnOk', this.element);
             this.btnOk.linkbutton({
                 text: 'OK',
                 plain: true,
@@ -50,7 +50,7 @@
             });
 
             // Кнопка "Отменить"
-            this.btnCancel = $('#btnCancel', this.element);
+            this.btnCancel = $('.btnCancel', this.element);
             this.btnCancel.linkbutton({
                 text: 'Отменить',
                 plain: true,
@@ -69,9 +69,7 @@
         },
 
         // Обработка панели инструментов
-        _processToolbar: function () {
-
-            
+        _processToolbar: function () {            
             this.btnRefresh.linkbutton('disable');
             this.btnCreate.linkbutton('disable');
             this.btnEdit.linkbutton('disable');

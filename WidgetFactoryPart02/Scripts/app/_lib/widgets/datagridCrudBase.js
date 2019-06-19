@@ -19,9 +19,9 @@
 
             var that = this;
 
-            this._grid = $('#grid', this.element);
+            this._grid = $('.grid', this.element);
             this._grid.datagrid({
-                toolbar: $('#tbar', this.element),
+                toolbar: $('.tbar', this.element),
                 idField: 'id',
                 rownumbers: true,
                 singleSelect: true,
@@ -45,7 +45,7 @@
             var that = this;
 
             // Кнопка Обновить
-            this.btnRefresh = $('#btnRefresh', this.element);
+            this.btnRefresh = $('.btnRefresh', this.element);
             this.btnRefresh.linkbutton({
                 text: 'Обновить',
                 plain: true,
@@ -55,7 +55,7 @@
             });
 
             // Кнопка Добавить
-            this.btnCreate = $('#btnCreate', this.element);
+            this.btnCreate = $('.btnCreate', this.element);
             this.btnCreate.linkbutton({
                 text: 'Добавить',
                 plain: true,
@@ -65,7 +65,7 @@
             });
 
             // Кнопка Изменить
-            this.btnEdit = $('#btnEdit', this.element);
+            this.btnEdit = $('.btnEdit', this.element);
             this.btnEdit.linkbutton({
                 text: 'Изменить',
                 plain: true,
@@ -75,7 +75,7 @@
             });
 
             // Кнопка Удалить
-            this.btnDelete = $('#btnDelete', this.element);
+            this.btnDelete = $('.btnDelete', this.element);
             this.btnDelete.linkbutton({
                 text: 'Удалить',
                 plain: true,

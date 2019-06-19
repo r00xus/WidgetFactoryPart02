@@ -20,7 +20,7 @@
         // Создание диалога ведения
         _createDialog: function () {
 
-            var dialog = $('#dialog', this.element);
+            var dialog = $('.dialog', this.element);
             var widgetname = this._dialogWidgetName();
 
             dialog[widgetname]();
