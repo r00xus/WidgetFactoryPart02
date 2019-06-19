@@ -52,7 +52,7 @@
             // Кнопка "Отменить"
             this.btnCancel = $('#btnCancel', this.element);
             this.btnCancel.linkbutton({
-                text: 'Отменить',
+                text: 'Cancel',
                 plain: true,
                 onClick: function () {
                     that._btnCancelClick();

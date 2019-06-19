@@ -14,7 +14,7 @@
                 url: '/Category/List/',
                 columns: [[                    
                     {
-                        field: 'code', title: 'Код', width: 50,
+                        field: 'code', title: 'Code', width: 50,
                         editor: {
                             type: 'textbox',
                             options: {
@@ -23,7 +23,7 @@
                         },
                     },
                     {
-                        field: 'name', title: 'Название', width: 430,
+                        field: 'name', title: 'Name', width: 430,
                         editor: {
                             type: 'textbox',
                             options: {

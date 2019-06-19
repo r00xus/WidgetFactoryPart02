@@ -5,13 +5,13 @@
         _create: function () {
 
             this.element.combogrid({
-                label: 'Категория',
+                label: 'Category',
                 idField: 'id',
                 textField: 'name',
                 url: '/DropDown/Category/',
                 columns: [[
-                    { field: 'code', title: 'Код' },
-                    { field: 'name', title: 'Название' },
+                    { field: 'code', title: 'Code' },
+                    { field: 'name', title: 'Name' },
                 ]]
             });
         }

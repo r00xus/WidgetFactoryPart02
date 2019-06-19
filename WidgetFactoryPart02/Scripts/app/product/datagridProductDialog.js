@@ -13,9 +13,9 @@
             this._grid.datagrid({
                 url: '/Product/List/',
                 columns: [[
-                    { field: 'code', title: 'Код' },
-                    { field: 'name', title: 'Название' },
-                    { field: 'categoryName', title: 'Категория' }
+                    { field: 'code', title: 'Code' },
+                    { field: 'name', title: 'Name' },
+                    { field: 'categoryName', title: 'Category' }
                 ]],
             });
         },

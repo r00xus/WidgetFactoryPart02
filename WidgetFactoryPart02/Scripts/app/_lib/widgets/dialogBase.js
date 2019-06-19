@@ -39,7 +39,7 @@
 
             footerBtns.btnCancel = $('#btnCancel', footer);
             footerBtns.btnCancel.linkbutton({
-                text: 'Отмена',
+                text: 'Cancel',
                 width: 90,
                 onClick: function () {
                     that.element.form('clear');

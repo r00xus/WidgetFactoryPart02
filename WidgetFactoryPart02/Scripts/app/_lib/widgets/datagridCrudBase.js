@@ -47,7 +47,7 @@
             // Кнопка Обновить
             this.btnRefresh = $('#btnRefresh', this.element);
             this.btnRefresh.linkbutton({
-                text: 'Обновить',
+                text: 'Refresh',
                 plain: true,
                 onClick: function () {
                     that._btnRefreshClick();
@@ -57,7 +57,7 @@
             // Кнопка Добавить
             this.btnCreate = $('#btnCreate', this.element);
             this.btnCreate.linkbutton({
-                text: 'Добавить',
+                text: 'Create',
                 plain: true,
                 onClick: function () {
                     that._btnCreateClick();
@@ -67,7 +67,7 @@
             // Кнопка Изменить
             this.btnEdit = $('#btnEdit', this.element);
             this.btnEdit.linkbutton({
-                text: 'Изменить',
+                text: 'Edit',
                 plain: true,
                 onClick: function () {
                     that._btnEditClick();
@@ -77,7 +77,7 @@
             // Кнопка Удалить
             this.btnDelete = $('#btnDelete', this.element);
             this.btnDelete.linkbutton({
-                text: 'Удалить',
+                text: 'Delete',
                 plain: true,
                 onClick: function () {
                     that._btnDeleteClick();

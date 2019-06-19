@@ -16,7 +16,7 @@
                 url: '/Product/List/',
                 columns: [[
                     {
-                        field: 'code', title: 'Код', width: 50,
+                        field: 'code', title: 'Code', width: 50,
                         editor: {
                             type: 'textbox',
                             options: {
@@ -25,7 +25,7 @@
                         },
                     },
                     {
-                        field: 'name', title: 'Название', width: 430,
+                        field: 'name', title: 'Name', width: 430,
                         editor: {
                             type: 'textbox',
                             options: {
@@ -34,7 +34,7 @@
                         },
                     },
                     {
-                        field: 'categoryId', title: 'Категория', width: 430,
+                        field: 'categoryId', title: 'Category', width: 430,
                         formatter: function (value, row, index) {
                             return row.categoryName;
                         },

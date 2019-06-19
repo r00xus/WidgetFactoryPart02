@@ -14,12 +14,12 @@
 
             ctrls.tboxCode = $('#tboxCode', this.element);
             ctrls.tboxCode.textbox({
-                label: 'Код'
+                label: 'Code'
             });
 
             ctrls.tboxName = $('#tboxName', this.element);
             ctrls.tboxName.textbox({
-                label: 'Название'
+                label: 'Name'
             });
         },
     });

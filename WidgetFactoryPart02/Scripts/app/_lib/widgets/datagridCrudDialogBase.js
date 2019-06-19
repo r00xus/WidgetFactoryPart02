@@ -41,7 +41,7 @@
 
             that._grid.datagrid('loading');
 
-            that.dialog.dialog('setTitle', 'Создать');
+            that.dialog.dialog('setTitle', 'Create');
             that.dialog[widgetname]('loadUrl', url);
             that.dialog[widgetname]('submitUrl', url);
             that.dialog[widgetname]('onSubmitSuccess', function (data) {
@@ -73,7 +73,7 @@
 
             that._grid.datagrid('loading');
 
-            that.dialog.dialog('setTitle', 'Изменить');
+            that.dialog.dialog('setTitle', 'Edit');
             that.dialog[widgetname]('loadUrl', url);
             that.dialog[widgetname]('submitUrl', url);
             that.dialog[widgetname]('onSubmitSuccess', function (data) {
