@@ -181,7 +181,6 @@
     <Content Include="Scripts\app\_lib\widgets\dialogBase.js" />
     <Content Include="Scripts\app\_lib\widgets\windowBase.js" />
     <Content Include="Scripts\app\category\dialogCategory.js" />
-    <Content Include="Scripts\app\category\Category.js" />
     <Content Include="Scripts\easyui\easyloader.js" />
     <Content Include="Scripts\easyui\jquery.easyui.min.js" />
     <Content Include="Scripts\app\home\Home.js" />
@@ -766,6 +765,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Partial\_panelBoth.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Product\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

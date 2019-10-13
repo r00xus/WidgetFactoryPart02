@@ -1,22 +1,22 @@
 ﻿@{
 // ----------------------------------------------------------
-// Представление: Категории
+// Представление: Товары
 // ----------------------------------------------------------
 }
 
 @{
-    ViewBag.Title = "Категории";
+    ViewBag.Title = "Товары";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@Html.Partial("~/Views/Category/Partial/_datagridCrudCategoryDialog.cshtml")
+@Html.Partial("~/Views/Product/Partial/_datagridCrudProductDialog.cshtml")
 
 <script type="text/javascript">
 
     (function () {
 
         $(document).ready(function () {
-            $('body').datagridCategoryDialog();
+            $('body').datagridProductDialog();
         });
 
     })();
@@ -25,5 +25,5 @@
 
 @section scripts {
     @Scripts.Render("~/bundles/lib")
-    @Scripts.Render("~/bundles/category")
+    @Scripts.Render("~/bundles/product")
 }
