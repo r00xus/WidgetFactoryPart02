@@ -1,10 +1,10 @@
 ﻿// ----------------------------------------------------------
-// Скрипт:
+// Скрипт: Виджет DataGrid для Товара
 // ----------------------------------------------------------
 
 (function ($) {
 
-    $.widget('custom.datagridProductDialog', $.custom.datagridCrudDialogBase, {
+    $.widget('custom.datagridProductDialog', $.custom.datagridCrudBase, {
 
         _createGrid: function () {
 
@@ -13,9 +13,16 @@
             this._grid.datagrid({
                 url: '/Product/List/',
                 columns: [[
-                    { field: 'code', title: 'Code' },
-                    { field: 'name', title: 'Name' },
-                    { field: 'categoryName', title: 'Category' }
+                    { field: 'code', title: 'Код' },
+                    { field: 'name', title: 'Название' },
+                    { field: 'typeName', title: 'Тип' },
+                    { field: 'categoryName', title: 'Категория' },
+                    {
+                        field: 'withDiscount', title: 'Со скидкой', align: 'center',
+                        formatter: function (value, row, index) {
+                            return '<input type="checkbox" disabled' + (value === true ? ' checked' : '') + '>';
+                        }
+                    }
                 ]],
             });
         },

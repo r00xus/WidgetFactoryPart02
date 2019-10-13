@@ -1,4 +1,5 @@
-﻿using System.Runtime.Serialization;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Runtime.Serialization;
 
 namespace TrainingWidgets.Models
 {
@@ -7,5 +8,8 @@ namespace TrainingWidgets.Models
     {
         [DataMember(Name = "id")]
         public long Id { get; set; }
+
+        [DataMember(Name = "rowVersion"), Timestamp]
+        public byte[] RowVersion { get; set; }
     }
 }

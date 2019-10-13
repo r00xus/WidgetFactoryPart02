@@ -11,19 +11,16 @@ namespace TrainingWidgets
                 .Include("~/Scripts/app/_lib/widgets/windowBase.js")
                 .Include("~/Scripts/app/_lib/widgets/dialogBase.js")
                 .Include("~/Scripts/app/_lib/widgets/datagridCrudBase.js")
-                .Include("~/Scripts/app/_lib/widgets/datagridCrudDialogBase.js")
-                .Include("~/Scripts/app/_lib/widgets/datagridCrudInlineBase.js"));
+                .Include("~/Scripts/app/_lib/widgets/datagridCrudDialogBase.js"));
 
 
             bundles.Add(new ScriptBundle("~/bundles/category")
                 .Include("~/Scripts/app/category/dialogCategory.js")
-                .Include("~/Scripts/app/category/datagridCategoryDialog.js")
-                .Include("~/Scripts/app/category/datagridCategoryInline.js"));
+                .Include("~/Scripts/app/category/datagridCategoryDialog.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/product")
                 .Include("~/Scripts/app/product/dialogProduct.js")
-                .Include("~/Scripts/app/product/datagridProductDialog.js")
-                .Include("~/Scripts/app/product/datagridProductInline.js"));
+                .Include("~/Scripts/app/product/datagridProductDialog.js"));
 
 
             bundles.Add(new ScriptBundle("~/bundles/home")

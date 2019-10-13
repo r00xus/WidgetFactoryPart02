@@ -11,10 +11,69 @@
 
             this._createToolbar();
             this._createGrid();
+            this._createDialog();
 
         },
 
-        // Инициализация грида
+        // Метод: Формирование Url для создания записи
+        _getCreateUrl: function () { return null; },
+
+        // Метод: Формирование Url для изменения записи
+        _getEditUrl: function (row) { return null; },
+
+        // Метод: Формирование Url для удаления записи
+        _getDeleteUrl: function (row) { return null; },
+
+        // Метод: Получение имени виджета формы
+        _dialogWidgetName: function () { },
+
+        // Метод: Инициализация панели инструментов
+        _createToolbar: function () {
+
+            var that = this;
+
+            // Кнопка Обновить
+            this.btnRefresh = $('#btnRefresh', this.element);
+            this.btnRefresh.linkbutton({
+                text: 'Обновить',
+                plain: true,
+                onClick: function () {
+                    that._btnRefreshClick();
+                }
+            });
+
+            // Кнопка Добавить
+            this.btnCreate = $('#btnCreate', this.element);
+            this.btnCreate.linkbutton({
+                text: 'Создать',
+                plain: true,
+                onClick: function () {
+                    that._btnCreateClick();
+                }
+            });
+
+            // Кнопка Изменить
+            this.btnEdit = $('#btnEdit', this.element);
+            this.btnEdit.linkbutton({
+                text: 'Изменить',
+                plain: true,
+                onClick: function () {
+                    that._btnEditClick();
+                }
+            });
+
+            // Кнопка Удалить
+            this.btnDelete = $('#btnDelete', this.element);
+            this.btnDelete.linkbutton({
+                text: 'Удалить',
+                plain: true,
+                onClick: function () {
+                    that._btnDeleteClick();
+                }
+            });
+        },
+
+        // Метод: Инициализация грида
         _createGrid: function () {
 
             var that = this;
@@ -39,70 +98,34 @@
             });
         },
 
-        // Инициализация панели инструментов 
-        _createToolbar: function () {
+        // Метод: Создание диалога ведения
+        _createDialog: function () {
 
-            var that = this;
+            var dialog = $('#dialog', this.element);
+            var widgetname = this._dialogWidgetName();
 
-            // Кнопка Обновить
-            this.btnRefresh = $('#btnRefresh', this.element);
-            this.btnRefresh.linkbutton({
-                text: 'Refresh',
-                plain: true,
-                onClick: function () {
-                    that._btnRefreshClick();
-                }
-            });
+            dialog[widgetname]();
 
-            // Кнопка Добавить
-            this.btnCreate = $('#btnCreate', this.element);
-            this.btnCreate.linkbutton({
-                text: 'Create',
-                plain: true,
-                onClick: function () {
-                    that._btnCreateClick();
-                }
-            });
-
-            // Кнопка Изменить
-            this.btnEdit = $('#btnEdit', this.element);
-            this.btnEdit.linkbutton({
-                text: 'Edit',
-                plain: true,
-                onClick: function () {
-                    that._btnEditClick();
-                }
-            });
-
-            // Кнопка Удалить
-            this.btnDelete = $('#btnDelete', this.element);
-            this.btnDelete.linkbutton({
-                text: 'Delete',
-                plain: true,
-                onClick: function () {
-                    that._btnDeleteClick();
-                }
-            });
+            this.dialog = dialog;
         },
 
-        // Обновить
+        // Событие: клик по кнопке "Обновить"
         _btnRefreshClick: function () {
 
             this._grid.datagrid('reload');
         },
 
-        // Кнопка "Добавить"
+        // Событие: клик по кнопке  "Добавить"
         _btnCreateClick: function () {
-
             this._doCreate();
         },
 
-        // Кнопка "Изменить"
+        // Событие: клик по кнопке  "Изменить"
         _btnEditClick: function () {
 
-            var selected = this._grid.datagrid('getSelections');
+            var row = this._grid.datagrid('getSelected');
 
-            if (selected.length == 0) {
+            if (row == null) {
                 $.messager.alert({
                     title: 'Ошибка',
                     icon: 'error',
@@ -111,19 +134,10 @@
                 return;
             }
 
-            if (selected.length > 1) {
-                $.messager.alert({
-                    title: 'Ошибка',
-                    icon: 'error',
-                    msg: 'Выберите только одну запись для редактирования!'
-                });
-                return;
-            }
-
-            this._doEdit(selected[0]);
+            this._doEdit(row);
         },
 
-        // Кнопка "Удалить"
+        // Событие: клик по кнопке "Удалить"
         _btnDeleteClick: function () {
 
             var that = this;
@@ -150,23 +164,68 @@
             });
         },
 
-        // Создание записи
+        // Метод: Создание записи
         _doCreate: function () {
+
+            var that = this;
+
+            var url = that._getCreateUrl();
+
+            if (url == null) return;
+
+            var widgetname = that._dialogWidgetName();
+
+            that._grid.datagrid('loading');
+
+            that.dialog.dialog('setTitle', 'Создать');
+            that.dialog[widgetname]('loadUrl', url);
+            that.dialog[widgetname]('submitUrl', url);
+            that.dialog[widgetname]('onSubmitSuccess', function (data) {
+                that._lastSelected = data.id;
+                that._grid.datagrid('reload');
+            });
+            that.dialog[widgetname]('load', {
+                onSuccess: function (data) {
+                    that.dialog.dialog('open');
+                    that._grid.datagrid('loaded');
+                },
+                onError: function () {
+                    that._grid.datagrid('loaded');
+                }
+            });
         },
 
-        // Изменение записи
+        // Метод:  Изменение записи
         _doEdit: function (row) {
+
+            var that = this;
+
+            var url = that._getEditUrl(row);
+
+            if (url == null) return;
+
+            var widgetname = that._dialogWidgetName();
+
+            that._grid.datagrid('loading');
+
+            that.dialog.dialog('setTitle', 'Изменить');
+            that.dialog[widgetname]('loadUrl', url);
+            that.dialog[widgetname]('submitUrl', url);
+            that.dialog[widgetname]('onSubmitSuccess', function (data) {
+                that._grid.datagrid('reload');
+            });
+            that.dialog[widgetname]('load', {
+                onSuccess: function (data) {
+                    that.dialog.dialog('open');
+                    that._grid.datagrid('loaded');
+                },
+                onError: function () {
+                    that._grid.datagrid('loaded');
+                }
+            });
         },
 
-        _btnOkClick: function () {
-
-        },
-
-        _btnCancelClick: function () {
-
-        },
-
-        // Удаление записи
+        // Метод: Удаление записи
         _doDelete: function (row) {
 
             var that = this;
@@ -203,12 +262,6 @@
                 that._grid.datagrid('loaded');
             });
         },
-
-        _getCreateUrl: function () { return null; },
-
-        _getEditUrl: function (row) { return null; },
-
-        _getDeleteUrl: function (row) { return null; }
 
     });
 

@@ -1,10 +1,10 @@
 ﻿// ----------------------------------------------------------
-// Скрипт: Виджет DataGrid для Категории продукции
+// Скрипт: Виджет DataGrid для Категории
 // ----------------------------------------------------------
 
 (function ($) {
 
-    $.widget('custom.datagridCategoryDialog', $.custom.datagridCrudDialogBase, {
+    $.widget('custom.datagridCategoryDialog', $.custom.datagridCrudBase, {
 
         _createGrid: function () {
 
@@ -14,10 +14,10 @@
                 url: '/Category/List/',
                 columns: [[
                     {
-                        field: 'code', title: 'Code', width: 50,
+                        field: 'code', title: 'Code',
                     },
                     {
-                        field: 'name', title: 'Name', width: 430
+                        field: 'name', title: 'Name',
                     },
                 ]]
             });

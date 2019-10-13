@@ -13,19 +13,9 @@ namespace TrainingWidgets.Controllers
             return PartialView("~/Views/Category/Partial/_datagridCrudCategoryDialog.cshtml");
         }
 
-        public ActionResult CategoryInline()
-        {
-            return PartialView("~/Views/Category/Partial/_datagridCrudCategoryInline.cshtml");
-        }
-
         public ActionResult ProductDialog()
         {
             return PartialView("~/Views/Product/Partial/_datagridCrudProductDialog.cshtml");
-        }
-
-        public ActionResult ProductInline()
-        {
-            return PartialView("~/Views/Product/Partial/_datagridCrudProductInline.cshtml");
         }
 
         public ActionResult ProductBoth()

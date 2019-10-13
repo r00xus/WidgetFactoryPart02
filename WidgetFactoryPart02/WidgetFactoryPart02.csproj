@@ -169,13 +169,10 @@
     <Content Include="favicon.png" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\app\category\datagridCategoryDialog.js" />
-    <Content Include="Scripts\app\category\datagridCategoryInline.js" />
     <Content Include="Scripts\app\home\panelBoth.js" />
-    <Content Include="Scripts\app\product\datagridProductInline.js" />
     <Content Include="Scripts\app\product\dialogProduct.js" />
     <Content Include="Scripts\app\product\datagridProductDialog.js" />
     <Content Include="Scripts\app\_lib\widgets\comboCategory.js" />
-    <Content Include="Scripts\app\_lib\widgets\datagridCrudInlineBase.js" />
     <Content Include="Scripts\app\_lib\widgets\datagridCrudBase.js" />
     <Content Include="Scripts\app\_lib\widgets\dialogBase.js" />
     <Content Include="Scripts\app\_lib\widgets\windowBase.js" />
@@ -754,18 +751,12 @@
     <Content Include="Views\Product\Partial\_datagridCrudProductDialog.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Category\Partial\_datagridCrudCategoryInline.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201906180819100_Init.resx">
       <DependentUpon>201906180819100_Init.cs</DependentUpon>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Product\Partial\_datagridCrudProductInline.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Partial\_panelBoth.cshtml" />

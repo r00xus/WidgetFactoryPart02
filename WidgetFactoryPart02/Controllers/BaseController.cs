@@ -1,7 +1,9 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Data.Entity.Validation;
+using System.Linq;
 using System.Web.Mvc;
 using TrainingWidgets.Models;
 using WidgetFactoryPart02.Lib;
@@ -108,8 +110,9 @@ namespace TrainingWidgets.Controllers
             }
         }
 
-        /// <summary> Изменение записи </summary>
-        protected ActionResult EditPost<TModel>(long id, DbSet<TModel> dbSet, string[] includeProperties) where TModel : EntityBase
+        /// <summary> Изменение (сохранение модели) </summary>
+        protected ActionResult EditPost<TModel>(long id, DbSet<TModel> dbSet, string[] includeProperties)
+            where TModel : EntityBase
         {
             try
             {
@@ -125,6 +128,8 @@ namespace TrainingWidgets.Controllers
 
                 if (TryUpdateModel(model, "", includeProperties))
                 {
+                    //_db.Entry(model).OriginalValues["RowVersion"] = model.RowVersion;
+
                     _db.SaveChanges();
 
                     return new JsonNetResult
@@ -139,6 +144,24 @@ namespace TrainingWidgets.Controllers
                         Data = new { succsss = false, erMessage = "Ошибка валидации" }
                     };
                 }
+            }
+            catch (DbUpdateConcurrencyException e)
+            {
+                var entry = e.Entries.Single();
+                var dbModel = (TModel)entry.GetDatabaseValues().ToObject();
+
+                return new JsonNetResult
+                {
+                    Data = new
+                    {
+                        success = false,
+                        updateConcurrency = true,
+                        erMessage = "Сущность изменена другим пользователем. Данные будут обновлены",
+                        model = dbModel,
+                        operation = "edit"
+                    },
+                    Formatting = Formatting.Indented
+                };
             }
             catch (DbEntityValidationException e)
             {
@@ -155,6 +178,7 @@ namespace TrainingWidgets.Controllers
                 };
             }
         }
+
 
         /// <summary> Удаление записи </summary>
         protected ActionResult DeletePost<TModel>(long id, DbSet<TModel> dbSet) where TModel : EntityBase
