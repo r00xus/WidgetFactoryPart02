@@ -128,7 +128,7 @@ namespace TrainingWidgets.Controllers
 
                 if (TryUpdateModel(model, "", includeProperties))
                 {
-                    //_db.Entry(model).OriginalValues["RowVersion"] = model.RowVersion;
+                    _db.Entry(model).OriginalValues["RowVersion"] = model.RowVersion;
 
                     _db.SaveChanges();
 

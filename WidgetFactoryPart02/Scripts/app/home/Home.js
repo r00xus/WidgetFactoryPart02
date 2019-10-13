@@ -2,29 +2,29 @@
 
     $(document).ready(function () {
 
-        $('#panelCategoryDialog').panel({
+        $('#panelCategoryDialog1').panel({
             href: '/Panel/CategoryDialog/',
             onLoad: function () {
                 $(this).datagridCategoryDialog();
             }
         });
 
-        $('#panelProductInline').panel({
-            href: '/Panel/ProductInline/',
+        $('#panelCategoryDialog2').panel({
+            href: '/Panel/CategoryDialog/',
             onLoad: function () {
-                $(this).datagridProductInline();
+                $(this).datagridCategoryDialog();
             }
         });
 
 
-        $('#panelCategoryInline').panel({
-            href: '/Panel/CategoryInline/',
+        $('#panelProductDialog1').panel({
+            href: '/Panel/ProductDialog/',
             onLoad: function () {
-                $(this).datagridCategoryInline();
+                $(this).datagridProductDialog();
             }
         });
 
-        $('#panelProductDialog').panel({
+        $('#panelProductDialog2').panel({
             href: '/Panel/ProductDialog/',
             onLoad: function () {
                 $(this).datagridProductDialog();
@@ -54,9 +54,9 @@
 
                 window.windowBase().window({
                     title: 'Товары',
-                    href: '/Panel/ProductInline/',
+                    href: '/Panel/ProductDialog/',
                     onLoad: function () {
-                        $(this).datagridProductInline();
+                        $(this).datagridProductDialog();
                     }
                 });
             }

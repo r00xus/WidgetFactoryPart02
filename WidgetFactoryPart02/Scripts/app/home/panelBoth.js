@@ -18,7 +18,7 @@
             this.tabCategory = $('#tabCategory', this.element);
             this.tabCategory.panel({
                 onLoad: function () {
-                    $(this).datagridCategoryInline();
+                    $(this).datagridCategoryDialog();
                 }
             });
 
@@ -51,9 +51,9 @@
                             that.tabs.tabs('add', {
                                 title: 'Товары',
                                 closable: true,
-                                href: '/Panel/ProductInline/',
+                                href: '/Panel/ProductDialog/',
                                 onLoad: function () {
-                                    $(this).datagridProductInline();
+                                    $(this).datagridProductDialog();
                                 }
                             });
 

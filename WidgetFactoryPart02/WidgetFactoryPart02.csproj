@@ -157,6 +157,10 @@
     <Compile Include="Migrations\201906180819100_Init.Designer.cs">
       <DependentUpon>201906180819100_Init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910131845252_RowVersion.cs" />
+    <Compile Include="Migrations\201910131845252_RowVersion.Designer.cs">
+      <DependentUpon>201910131845252_RowVersion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ProductContext.cs" />
     <Compile Include="Models\ProductContext\Base\EntityBase.cs" />
@@ -176,7 +180,6 @@
     <Content Include="Scripts\app\_lib\widgets\datagridCrudBase.js" />
     <Content Include="Scripts\app\_lib\widgets\dialogBase.js" />
     <Content Include="Scripts\app\_lib\widgets\windowBase.js" />
-    <Content Include="Scripts\app\_lib\widgets\datagridCrudDialogBase.js" />
     <Content Include="Scripts\app\category\dialogCategory.js" />
     <Content Include="Scripts\app\category\Category.js" />
     <Content Include="Scripts\easyui\easyloader.js" />
@@ -756,6 +759,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201906180819100_Init.resx">
       <DependentUpon>201906180819100_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910131845252_RowVersion.resx">
+      <DependentUpon>201910131845252_RowVersion.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

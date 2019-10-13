@@ -14,10 +14,10 @@
                 url: '/Category/List/',
                 columns: [[
                     {
-                        field: 'code', title: 'Code',
+                        field: 'code', title: 'Код',
                     },
                     {
-                        field: 'name', title: 'Name',
+                        field: 'name', title: 'Название',
                     },
                 ]]
             });
