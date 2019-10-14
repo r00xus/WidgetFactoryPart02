@@ -19,10 +19,12 @@ namespace TrainingWidgets.Controllers
         {
             IQueryable<Category> query = _db.Categories.OrderByDescending(x => x.Id);
 
-            if (page != null && rows != null)
-                query = query.ToPagedQueryable((int)page, (int)rows);
+            var pagedQuery = query;
 
-            var result = query.ToList();
+            if (page != null && rows != null)
+                pagedQuery = pagedQuery.ToPagedQueryable((int)page, (int)rows);
+
+            var result = pagedQuery.ToList();
 
             return new JsonNetResult
             {
@@ -59,7 +61,7 @@ namespace TrainingWidgets.Controllers
         [ActionName("Edit")]
         public ActionResult EditPost(long id)
         {
-            return EditPost(id, _db.Categories, new string[] { "Code", "Name" });
+            return EditPost(id, _db.Categories, new string[] { "Code", "Name", "RowVersion" });
         }
 
         /// <summary> Удаление категории </summary>

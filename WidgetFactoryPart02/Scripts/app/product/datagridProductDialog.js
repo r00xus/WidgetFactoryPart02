@@ -15,14 +15,8 @@
                 columns: [[
                     { field: 'code', title: 'Код' },
                     { field: 'name', title: 'Название' },
-                    { field: 'typeName', title: 'Тип' },
                     { field: 'categoryName', title: 'Категория' },
-                    {
-                        field: 'withDiscount', title: 'Со скидкой', align: 'center',
-                        formatter: function (value, row, index) {
-                            return '<input type="checkbox" disabled' + (value === true ? ' checked' : '') + '>';
-                        }
-                    }
+                    { field: 'typeName', title: 'Тип' },
                 ]],
             });
         },

@@ -8,6 +8,7 @@ namespace TrainingWidgets
         {
             bundles.Add(new ScriptBundle("~/bundles/lib")
                 .Include("~/Scripts/app/_lib/widgets/comboCategory.js")
+                .Include("~/Scripts/app/_lib/widgets/comboProductType.js")
                 .Include("~/Scripts/app/_lib/widgets/windowBase.js")
                 .Include("~/Scripts/app/_lib/widgets/dialogBase.js")
                 .Include("~/Scripts/app/_lib/widgets/datagridCrudBase.js"));

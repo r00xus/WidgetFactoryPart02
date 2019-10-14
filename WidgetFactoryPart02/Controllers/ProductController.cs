@@ -18,10 +18,12 @@ namespace TrainingWidgets.Controllers
         {
             IQueryable<Product> query = _db.Products.OrderByDescending(x => x.Id);
 
-            if (page != null && rows != null)
-                query = query.ToPagedQueryable((int)page, (int)rows);
+            var pagedQuery = query;
 
-            var result = query.ToList();
+            if (page != null && rows != null)
+                pagedQuery = pagedQuery.ToPagedQueryable((int)page, (int)rows);
+
+            var result = pagedQuery.ToList();
 
             return new JsonNetResult
             {
@@ -41,7 +43,7 @@ namespace TrainingWidgets.Controllers
 
         /// <summary> Создание </summary>
         [HttpPost, ActionName("Create")]
-        public ActionResult CreatePost([Bind(Include = "Code,Name,CategoryId")] Product model)
+        public ActionResult CreatePost([Bind(Include = "Code,Name,CategoryId,Type,WithDiscount")] Product model)
         {
             return CreatePost(model, _db.Products);
         }
@@ -56,7 +58,7 @@ namespace TrainingWidgets.Controllers
         [HttpPost, ActionName("Edit")]
         public ActionResult EditPost(long id)
         {
-            return EditPost(id, _db.Products, new string[] { "Code", "Name", "CategoryId" });
+            return EditPost(id, _db.Products, new string[] { "Code", "Name", "CategoryId", "Type", "WithDiscount", "RowVersion" });
         }
 
         /// <summary> Удаление </summary>

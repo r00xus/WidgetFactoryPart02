@@ -5,14 +5,25 @@
 }
 
 <div style="padding:20px; width:500px;">
+    <input name="rowVersion" type="hidden" />
     <div style="margin-bottom:10px">
         <input id="tboxCode" name="code" labelWidth="100" style="width:40%" />
     </div>
     <div style="margin-bottom:10px">
         <input id="tboxName" name="name" labelWidth="100" style="width:100%;" />
     </div>
-    <div>
+    <div style="margin-bottom:10px">
         <input id="comboCategory" name="categoryId" labelWidth="100" style="width:100%;" />
+    </div>
+    <div style="margin-bottom:10px">
+        <input id="comboType" name="type" labelWidth="100" style="width:100%;" />
+    </div>
+    <div>
+        <label>
+            <span style="display:inline-block; width:100px">Со скидкой</span>
+            <input id="checkboxWithDiscount" name="withDiscount" type="checkbox" value="true" />
+        </label>
+        <input id="withDiscount" name="withDiscount" type="hidden" value="false">
     </div>
 </div>
 <div id="footer">

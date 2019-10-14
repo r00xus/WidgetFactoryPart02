@@ -1,7 +1,8 @@
 ﻿using System.Linq;
-using System.Data.Entity;
 using System.Web.Mvc;
 using WidgetFactoryPart02.Lib;
+using System.Collections.Generic;
+using TrainingWidgets.Models;
 
 namespace TrainingWidgets.Controllers
 {
@@ -21,6 +22,26 @@ namespace TrainingWidgets.Controllers
             return new JsonNetResult
             {
                 Data = rows
+            };
+        }
+
+        public ActionResult ProductTypes()
+        {
+            return new JsonNetResult
+            {
+                Data = new List<object>
+                {
+                    new
+                    {
+                        value = ((int)ProductType.Internal).ToString(),
+                        text = ProductType.Internal.Name()
+                    },
+                    new
+                    {
+                        value = ((int)ProductType.External).ToString(),
+                        text = ProductType.External.Name()
+                    },
+                }
             };
         }
     }

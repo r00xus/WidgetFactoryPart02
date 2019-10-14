@@ -24,6 +24,20 @@
 
             ctrls.comboCategory = $('#comboCategory', this.element);
             ctrls.comboCategory.comboCategory();
+
+            ctrls.comboType = $('#comboType', this.element);
+            ctrls.comboType.comboProductType();
+
+            ctrls.checkboxWithDiscount = $('#checkboxWithDiscount', this.element);
+            ctrls.withDiscount = $('#withDiscount', this.element);
+        },
+
+        _onLoadSuccess: function (data) {
+
+            var ctrls = this.ctrls;
+
+            ctrls.withDiscount.val('false');
+
         },
     });
 

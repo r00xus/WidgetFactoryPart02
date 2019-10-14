@@ -165,6 +165,7 @@
                             $.messager.alert({
                                 title: 'Предупреждение',
                                 icon: 'warning',
+                                width: 500,
                                 msg: result.erMessage
                             });
 

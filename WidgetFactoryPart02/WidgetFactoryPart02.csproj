@@ -161,6 +161,10 @@
     <Compile Include="Migrations\201910131845252_RowVersion.Designer.cs">
       <DependentUpon>201910131845252_RowVersion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910141731318_NewFields.cs" />
+    <Compile Include="Migrations\201910141731318_NewFields.Designer.cs">
+      <DependentUpon>201910141731318_NewFields.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ProductContext.cs" />
     <Compile Include="Models\ProductContext\Base\EntityBase.cs" />
@@ -176,6 +180,7 @@
     <Content Include="Scripts\app\home\panelBoth.js" />
     <Content Include="Scripts\app\product\dialogProduct.js" />
     <Content Include="Scripts\app\product\datagridProductDialog.js" />
+    <Content Include="Scripts\app\_lib\widgets\comboProductType.js" />
     <Content Include="Scripts\app\_lib\widgets\comboCategory.js" />
     <Content Include="Scripts\app\_lib\widgets\datagridCrudBase.js" />
     <Content Include="Scripts\app\_lib\widgets\dialogBase.js" />
@@ -761,6 +766,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910131845252_RowVersion.resx">
       <DependentUpon>201910131845252_RowVersion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910141731318_NewFields.resx">
+      <DependentUpon>201910141731318_NewFields.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
